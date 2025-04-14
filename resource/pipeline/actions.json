@@ -2,8 +2,7 @@
   "返回": {
     "recognition": "TemplateMatch",
     "template": "../image/返回.png",
-    "roi": [12,43,55,64],
-    "threshold": 0.4,
+    "roi": [24,47,34,54],
     "action": "Click"
   },
   "综合": {
@@ -15,7 +14,7 @@
   "电视台": {
     "recognition": "TemplateMatch",
     "template": "../image/电视台.png",
-    "roi" : [464,1201,77,79],
+    "roi" : [475,1212,54,68],
     "action": "Click"
   },
   "返回2": {
@@ -80,6 +79,12 @@
     "threshold": 0.9,
     "action": "Click"
   },
+  "选E": {
+    "recognition": "TemplateMatch",
+    "template": "../image/E.png",
+    "threshold": 0.9,
+    "action": "Click"
+  },
   "下一题": {
     "recognition": "TemplateMatch",
     "template": "../image/下一题.png",
@@ -98,7 +103,6 @@
     "recognition": "TemplateMatch",
     "template": "../image/填空题视频.png",
     "action": "DoNothing",
-    "threshold": 0.9,
     "timeout": 1100,
     "inverse": true,
     "green_mask": true
@@ -106,7 +110,10 @@
   "查看提示": {
     "recognition": "TemplateMatch",
     "template": "../image/查看提示.png",
-    "action": "Click"
+    "action": "Click",
+    "timeout": 500,
+    "pre_delay": 100,
+    "post_delay": 0
   },
   "关闭提示": {
     "recognition": "TemplateMatch",
@@ -145,7 +152,8 @@
     "expected": [0,1,2,3,4,5],
     "roi": [8,0,712,1280],
     "pre_delay": 0,
-    "post_delay": 0
+    "post_delay": 0,
+    "timeout": 5000
   },
   "similarity": {
     "recognition": "custom",

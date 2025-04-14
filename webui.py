@@ -39,6 +39,7 @@ app_state = AppState()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    await asyncio.sleep(1)
     webbrowser.open_new("http://127.0.0.1:8000")
     yield
 
@@ -100,6 +101,11 @@ def stop():
         return {"status": "failed","message":"任务未开始"}
     app_state.worker.stop_flag = True
     app_state.child_process = None
+    return {"status": "success"}
+
+@app.post("/api/continue")
+def going_on():
+    app_state.worker.pause_flag = False
     return {"status": "success"}
 
 @app.websocket("/api/ws")
